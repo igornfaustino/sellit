@@ -3,6 +3,7 @@ import { FiLogIn } from 'react-icons/fi';
 
 import './styles.css';
 import store from '../../assests/store.png';
+import { Link } from 'react-router-dom';
 
 export const Login: React.FC = () => {
   return (
@@ -25,10 +26,11 @@ export const Login: React.FC = () => {
             Entrar <FiLogIn />
           </button>
 
-          <a href="/register">Não tenho cadastro</a>
+          <Link to="/register" className="back-link">
+            Não tenho cadastro
+          </Link>
         </form>
       </section>
-      <img src={store} alt="store" />
     </div>
   );
 };
