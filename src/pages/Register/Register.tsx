@@ -1,17 +1,16 @@
 import React from 'react';
-import { FiLogIn } from 'react-icons/fi';
 
 import './styles.css';
 import { Link } from 'react-router-dom';
 
-export const Login: React.FC = () => {
+const Register: React.FC = () => {
   return (
-    <div className="container logon-container">
+    <div className="container">
       <section className="form">
         <h1 className="logo">Sell It</h1>
 
         <form>
-          <h2>Faça seu login</h2>
+          <h2>Faça seu Cadastro</h2>
 
           <input type="email" name="email" id="email" placeholder="Seu email" />
           <input
@@ -20,16 +19,25 @@ export const Login: React.FC = () => {
             id="password"
             placeholder="Sua senha"
           />
+          <input type="text" name="name" id="name" placeholder="Seu nome" />
+          <input
+            type="text"
+            name="whatsapp"
+            id="whatsapp"
+            placeholder="Seu whatsapp"
+          />
 
           <button type="submit" className="button">
-            Entrar <FiLogIn />
+            Cadastrar
           </button>
 
-          <Link to="/register" className="back-link">
-            Não tenho cadastro
+          <Link to="/" className="back-link">
+            Voltar para o login
           </Link>
         </form>
       </section>
     </div>
   );
 };
+
+export default Register;
