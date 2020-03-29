@@ -4,15 +4,20 @@ import { FiTrash2 } from 'react-icons/fi';
 import './styles.css';
 
 interface ItemProps {
-  id: string;
   name: string;
   description: string;
   value: number;
+  onDelete: () => void;
 }
 
-const ListItem: React.FC<ItemProps> = ({ id, name, description, value }) => {
+const ListItem: React.FC<ItemProps> = ({
+  name,
+  description,
+  value,
+  onDelete
+}) => {
   return (
-    <li key={id} className="list-item">
+    <li className="list-item">
       <strong>Item</strong>
       <p>{name}</p>
       <strong>Descrição</strong>
@@ -20,7 +25,7 @@ const ListItem: React.FC<ItemProps> = ({ id, name, description, value }) => {
       <strong>Valor</strong>
       <p>R${value.toFixed(2)}</p>
 
-      <button type="button">
+      <button type="button" onClick={onDelete}>
         <FiTrash2 color="#a8a8b3" />
       </button>
     </li>
