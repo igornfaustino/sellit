@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, useCallback } from 'react';
 import { Header } from '../../components/Header/Header';
 import { Link, useHistory } from 'react-router-dom';
 import './styles.css';
@@ -64,6 +64,11 @@ const Profile: React.FC = () => {
     [deleteItem, items]
   );
 
+  const logout = useCallback(() => {
+    localStorage.clear();
+    history.replace('/');
+  }, [history]);
+
   useEffect(() => {
     const items = data?.user.items;
     if (items) setItems(items);
@@ -82,7 +87,9 @@ const Profile: React.FC = () => {
           <Link to="item" className="link">
             Cadastrar novo item
           </Link>
-          <div className="link">Logout</div>
+          <div className="link" onClick={logout}>
+            Logout
+          </div>
         </>
       </Header>
       <div className="container-profile">
