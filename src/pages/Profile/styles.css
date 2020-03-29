@@ -1,0 +1,28 @@
+.link {
+  display: flex;
+  align-items: center;
+  color: #41414d;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s;
+  margin-left: 16px;
+  cursor: pointer;
+}
+
+.link:hover {
+  opacity: 0.8;
+}
+
+.container-profile {
+  width: 100%;
+  max-width: 1120px;
+  margin: 100px auto;
+}
+
+.container-profile ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 24px;
+  list-style: none;
+}

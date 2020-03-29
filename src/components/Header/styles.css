@@ -1,0 +1,20 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.branding {
+  color: #e02041;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.items {
+  display: flex;
+  justify-content: space-between;
+}
