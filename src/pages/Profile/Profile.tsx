@@ -41,9 +41,7 @@ interface Query {
 const Profile: React.FC = () => {
   const [items, setItems] = useState<Item[]>([]);
   const history = useHistory();
-  const { loading, error, data } = useQuery<Query>(GET_ITEMS, {
-    pollInterval: 500
-  });
+  const { loading, error, data, refetch } = useQuery<Query>(GET_ITEMS);
   const [deleteItem] = useMutation(DELETE_ITEM, {
     onError: e => {
       console.log({ e });
@@ -73,6 +71,10 @@ const Profile: React.FC = () => {
     const items = data?.user.items;
     if (items) setItems(items);
   }, [data]);
+
+  useEffect(() => {
+    refetch();
+  }, [refetch]);
 
   if (loading) return <div>Loading...</div>;
   if (error) {
